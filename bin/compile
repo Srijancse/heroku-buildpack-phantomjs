@@ -4,7 +4,6 @@ set -e
 
 BUILD_DIR=$1
 CACHE_DIR=$2
-STACK="$STACK"
 
 # config
 VERSION="2.5.0-beta"
