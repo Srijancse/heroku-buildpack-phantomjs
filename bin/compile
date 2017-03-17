@@ -11,7 +11,7 @@ VERSION="2.5.0-beta"
 # phantomjs-2.5.0-beta-linux-ubuntu-trusty-x86_64.tar.gz
 
 # Buildpack URL
-if [ "$STACK" -eq "cedar-14" ]; then OS_VERSION="trusty"; else OS_VERSION="xenial"; fi
+if [ "$STACK" == "cedar-14" ]; then OS_VERSION="trusty"; else OS_VERSION="xenial"; fi
 ARCHIVE_NAME=phantomjs-${VERSION}-linux-ubuntu-${OS_VERSION}-x86_64
 FILE_NAME=${ARCHIVE_NAME}.tar.gz
 BUILDPACK_PHANTOMJS_PACKAGE=https://bitbucket.org/ariya/phantomjs/downloads/${FILE_NAME}
