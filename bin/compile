@@ -30,7 +30,7 @@ fi
 echo "-----> Extracting PhantomJS ${VERSION} binaries to ${BUILD_DIR}/vendor/phantomjs"
 mkdir -p $CACHE_DIR/$EXTRACTED_ARCHIVE_NAME
 mkdir -p $BUILD_DIR/vendor
-tar -xzf $CACHE_DIR/$DOWNLOAD_FILE_NAME -C $CACHE_DIR
+tar xf $CACHE_DIR/$DOWNLOAD_FILE_NAME -C $CACHE_DIR
 echo "-----> Moving from ${CACHE_DIR}/${EXTRACTED_ARCHIVE_NAME} to ${BUILD_DIR}/vendor/phantomjs"
 mv $CACHE_DIR/$EXTRACTED_ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
 chmod +x $BUILD_DIR/vendor/phantomjs/bin/phantomjs
