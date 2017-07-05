@@ -18,7 +18,7 @@ if [ "$STACK" = "cedar-14" ]; then OS_VERSION="trusty"; else OS_VERSION="xenial"
 ARCHIVE_NAME=phantomjs-${VERSION}-linux
 #EXTRACTED_ARCHIVE_NAME=phantomjs-${VERSION}-ubuntu-${OS_VERSION}
 EXTRACTED_ARCHIVE_NAME=phantomjs-${VERSION}-linux-x86_64
-DOWNLOAD_FILE_NAME=${ARCHIVE_NAME}-x86_64.tar.gz
+DOWNLOAD_FILE_NAME=${ARCHIVE_NAME}-x86_64.tar.bz2
 BUILDPACK_PHANTOMJS_PACKAGE=https://bitbucket.org/ariya/phantomjs/downloads/${DOWNLOAD_FILE_NAME}
 
 mkdir -p $CACHE_DIR
