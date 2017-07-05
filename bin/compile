@@ -6,15 +6,18 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 # config
-VERSION="2.5.0-beta"
+#VERSION="2.5.0-beta"
+VERSION="2.1.1"
 
 # phantomjs-2.5.0-beta-linux-ubuntu-trusty-x86_64.tar.gz
 
 # Buildpack URL
 echo "-----> Installing PhantomJS ${VERSION} for ${STACK} stack"
 if [ "$STACK" = "cedar-14" ]; then OS_VERSION="trusty"; else OS_VERSION="xenial"; fi
-ARCHIVE_NAME=phantomjs-${VERSION}-linux-ubuntu-${OS_VERSION}
-EXTRACTED_ARCHIVE_NAME=phantomjs-${VERSION}-ubuntu-${OS_VERSION}
+#ARCHIVE_NAME=phantomjs-${VERSION}-linux-ubuntu-${OS_VERSION}
+ARCHIVE_NAME=phantomjs-${VERSION}-linux
+#EXTRACTED_ARCHIVE_NAME=phantomjs-${VERSION}-ubuntu-${OS_VERSION}
+EXTRACTED_ARCHIVE_NAME=phantomjs-${VERSION}-linux-x86_64
 DOWNLOAD_FILE_NAME=${ARCHIVE_NAME}-x86_64.tar.gz
 BUILDPACK_PHANTOMJS_PACKAGE=https://bitbucket.org/ariya/phantomjs/downloads/${DOWNLOAD_FILE_NAME}
 
@@ -30,6 +33,7 @@ mkdir -p $BUILD_DIR/vendor
 tar -xzf $CACHE_DIR/$DOWNLOAD_FILE_NAME -C $CACHE_DIR
 echo "-----> Moving from ${CACHE_DIR}/${EXTRACTED_ARCHIVE_NAME} to ${BUILD_DIR}/vendor/phantomjs"
 mv $CACHE_DIR/$EXTRACTED_ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
+chmod +x $BUILD_DIR/vendor/phantomjs/bin/phantomjs
 
 echo "-----> exporting PATH and LIBRARY_PATH"
 PROFILE_PATH="$BUILD_DIR/.profile.d/phantomjs.sh"
